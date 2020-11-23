@@ -48,7 +48,50 @@
 				<h1>State of the Art</h1>
 				</div>
 				<div class="paragraph">
-				<p>This is an overview of a driverless cars</p>
+				<p><strong><u>Introduction</u></strong><br>The automotive industry has been a hot topic in the last few years, but their development has contributed towards innovation and economic growth for more than a century. Now the industry is facing one of the greatest technological revolutions, driverless cars, or similar names like autonomous vehicles, self-driving cars. They all have a common objective, allowing vehicles to be controlled by computers instead of humans, who are often making mistakes in many scenarios. This article would identify the current “state of the art” in driverless cars.</p>
+
+				<p>Such technological revolution requires the development of a number of technologies. This includes sensors, computers and actuators. The basic responsibility of self driving cars include lateral and longitude control of vehicles along with V2V and Vehicles to infrastructure(V2I) communication.</p>
+				<p>To achieve the notion of driverless cars, the Advanced Driver Assistance System(ADAS) is essential. This type of system is already adopted by many car manufacturers to ensure the safety of drivers and vehicles. The solution provided by ADAS is to use a combination of different types of sensors combined with actuators, control units and integrating software to enable vehicles to recognize its environment and respond in a safe way.</p>
+				<p>In the current autonomous vehicles, sensor-based systems have offered varying degrees of assistance to the driver. However, they are still yet to be capable of providing complete self-driving experience. The current available sensors and AI algorithms cannot fully understand a vehicle’s surrounding. Also using a wide range of sensors to create a 360-degree view of a vehicle is expensive and it could cause some delay on the communications between them. Light Detection and Ranging (LIDAR) is an example system for 360-degree imaging, but it is complex and expensive and not ready for the market.</p>
+
+				<figure><img src="images/sensors.png"></figure>
+
+				<p>The image above shows the advantages and disadvantages for each common sensor that is frequently used in automotive industry. This can give you some understanding of the characteristics of each type of sensor.</p>
+				<p><strong><u>System Architectures</u></strong><br>
+				The driverless systems can be designed as standalone, ego-only systems, or connected multi-agent systems. These design philosophies are realized with 2 alternative approaches: modular or end-to-end driving.</p>
+				<p><strong>1. Ego-only systems - </strong>
+This approach is to allow all the necessary automated driving operations to be carried on each single self-sufficient vehicle at all times. This is the most common approach in the current state-of-the-art driverless system. This could be because it is more practical to develop a self-sufficient system and there would be more challenges of connected systems.
+</p>
+				<p><strong>2. Modular systems - </strong>
+					This system consists of a pipeline of separate individual components linking the sensory inputs to actuator outputs. An example diagram of modular system is shown below:
+	By keeping each individual component separate from each other allows the problem to be split into a set of smaller and easier problems. But one disadvantage of a modular system is that it is being prone to error propagation. The Tesla accident is an example of such a problem.
+				<p><strong>3. End-to-end driving - </strong>
+					There are 3 main approaches for end-to-end driving:<br>
+<strong>Direct supervised deep learning - </strong>
+It learns from the target data(usually collected from human drivers), and it can be trained offline but it has poor generalization performance.
+<br>
+<strong>Neuroevolution - </strong>
+It uses evolutionary algorithms to train AI networks, and no backpropagation is needed. The algorithm evolved by interacting online. This approach is not yet achieved in the real world driving.
+<br>
+<strong>Deep reinforcement learning - </strong>
+It also requires online interaction to give feedback to learn the optimal way of driving(By using Deep Q Networks(DQN)). No urban driving has been achieved yet.
+
+The disadvantages of end-to-end driving is that it lacks safety measures and interpretability.
+
+<p><strong><u>Localization and Mapping</u></strong><br>
+	This is another important area plays a vital role in the task of self-driving. Localization is to allow the vehicle to find ego-position relative to a reference frame in an environment. It is crucial for driverless cars as the cars must ensure it has the correct lane and can position itself in it accurately. Otherwise there could be severe consequences to human safety.
+</p>
+<p>
+The resource 2 has mentioned 3 common types of localization at the moment:<br>
+
+<strong>Global Positioning System and Inertial Measurement Unit (GPS-IMU) fusion - </strong> This approach allows the changes in position and orientation measured by IMU, and this information is processed for localizing the vehicle with dead reckoning. GPS-IUM systems alone are not enough to meet the performance criteria of vehicle localization. However, the system can be used for initial pose estimation with a combination of sensors in state-of-the-art localization systems.
+</p>
+<p>
+<strong>Simultaneous localization and mapping(SLAM) - </strong>This is to make an online map and localize the car in the map simultaneously. This method does not require any priori information of the map, therefore it offers a major advantage over a priori method, it can work anywhere. However, autonomous vehicles have a vast environment to detect and very large computational power is needed to perform, SLAM is less efficient than localization with a pre-built map. But it has the potential to be the future state-of-the-art if its performance can be increased.
+</p>
+<p>
+<strong>A priori map-based localization - </strong>This approach is considered to be the current state-of-the-art for the localization task. The main idea is to compare a pre-built map to the online reading in order to find the best possible locations. The shortcoming is that if the information of the map is different from the actual environment could affect the performance negatively.
+</p>
 			</div>
 			</article>
 	</div>
